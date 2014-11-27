@@ -1,4 +1,4 @@
 pennypots-node
 ==============
 
-To run from root <code>node server.js</code>
+From root of project run: <code>node server.js</code>

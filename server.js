@@ -1,12 +1,13 @@
 var express = require('express');
     app = express(),
-    http = require('http').Server(app),
-    io = require('socket.io')(http),
-    game = require('./server/Game.js');
+    server = require('http').Server(app),
+    io = require('socket.io')(server),
+    game = require('./server/Game.js'),
     Player = require('./server/Player.js');
 
 app.use(express.static(__dirname + '/public'));
 
+//Socket io
 io.on('connection', function(socket){
   socket.on('player joined', function (name) {
     player = new Player(name);
@@ -17,6 +18,8 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(3000, function(){
+//Routes
+
+server.listen(3000, function(){
   console.log('listening on *:3000');
 });

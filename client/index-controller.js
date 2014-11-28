@@ -10,11 +10,9 @@ function refreshPlayerList(players) {
 
 function showPlayerHud(player) {
   // Set greeting
-  $("#player-greeting").text("- Welcome, " + player.name);
+  $("#player-greeting").text(" - Welcome, " + player.name);
   // Hide join form
   $("#player-join-form").hide();
-  // Show leave button
-  leaveButton.show();
   // Get the timer
   getCurrentTimer();
 }
